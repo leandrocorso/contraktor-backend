@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "0f37dea5-9a72-4596-bf1d-1cbbe1216c75",
+		"name": "Contraktor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all contracts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/api/contracts/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"contracts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a contract",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/api/contracts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"contracts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert a new contract",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"nome do contrato\",\n\t\"filename\": \"nome-do-arquivo.pdf\",\n\t\"effectiveDate\": \"2019-07-31 00:00:00\",\n\t\"expirationDate\": \"2020-07-31 23:59:59\",\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/contracts",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"contracts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a contract",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"outro nome do contrato\",\n\t\"filename\": \"outro-nome-do-arquivo.pdf\",\n\t\"effectiveDate\": \"2019-08-01 00:00:00\",\n\t\"expirationDate\": \"2020-08-01 23:59:59\",\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/contracts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"contracts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a contract",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:5000/api/contracts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"contracts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
