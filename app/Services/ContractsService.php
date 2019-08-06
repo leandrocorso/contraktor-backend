@@ -20,11 +20,15 @@ class ContractsService
         $this->filePath = base_path('public/storage/contracts');
     }
 
+    public function downloadPath() {
+      return $this->filePath;
+    }
+
     public function getAll() {
-        
+
         try {
             $contracts = $this->repo->getAll();
-            return (count($contracts) > 0) 
+            return (count($contracts) > 0)
                 ? response()->json($contracts, Response::HTTP_OK)
                 : response()->json([], Response::HTTP_OK);
 
@@ -32,14 +36,14 @@ class ContractsService
             $message = ['error' => 'Não foi possível retornar os contratos'];
             return response()->json($message, Response::HTTP_INTERNAL_SERVER_ERROR);
         }
-        
+
     }
 
     public function get($id) {
 
         try {
             $contract = $this->repo->get($id);
-            return ($contract) 
+            return ($contract)
                 ? response()->json($contract, Response::HTTP_OK)
                 : response()->json(null, Response::HTTP_OK);
 
@@ -68,9 +72,9 @@ class ContractsService
     }
 
     public function update(Request $request) {
-        
+
         $validator = Validator::make($request->all(), ContractsValidator::updateRules($request));
-        
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         }
@@ -88,7 +92,7 @@ class ContractsService
     public function destroy($id) {
 
         $validator = Validator::make(['id' => $id], ContractsValidator::DELETE_RULES);
-        
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
         }

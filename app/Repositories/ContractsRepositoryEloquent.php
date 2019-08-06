@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Repositories\ContractsRepositoryInterface;
 use App\Models\Contracts;
 
-class ContractsRepositoryEloquent implements ContractsRepositoryInterface 
+class ContractsRepositoryEloquent implements ContractsRepositoryInterface
 {
     private $model;
 
@@ -16,7 +16,12 @@ class ContractsRepositoryEloquent implements ContractsRepositoryInterface
         $this->model = $contracts;
         $this->filePath = base_path('public/storage/contracts');
     }
-    
+
+    // Get the download path
+    public function downloadPath() {
+      return $this->filePath;
+    }
+
     // Get all contracts
     public function getAll() {
         return $this->model->all();
@@ -37,7 +42,7 @@ class ContractsRepositoryEloquent implements ContractsRepositoryInterface
 
                 $contract = $this->model->create($request->all());
                 $contract->parts()->attach($request['parts']);
-                
+
                 return $contract;
             }
 

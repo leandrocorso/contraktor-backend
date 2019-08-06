@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Services\ContractsService;
 
-class ContractsController extends Controller 
+class ContractsController extends Controller
 {
 
     private $service;
@@ -14,6 +14,10 @@ class ContractsController extends Controller
     public function __construct(ContractsService $service)
     {
         $this->service = $service;
+    }
+
+    public function downloadPath() {
+        return $this->service->downloadPath();
     }
 
     public function getAll() {

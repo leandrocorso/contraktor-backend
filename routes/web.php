@@ -1,6 +1,7 @@
 <?php
 
 $router->group(['prefix' => '/api/contracts'], function() use ($router) {
+    $router->get('/downloadPath', 'ContractsController@downloadPath');
     $router->get('/', 'ContractsController@getAll');
     $router->get('/{id}', 'ContractsController@get');
     $router->post('/', 'ContractsController@store');
