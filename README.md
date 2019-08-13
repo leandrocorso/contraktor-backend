@@ -18,18 +18,26 @@ O projeto pode rodar diretamente do servidor local do php pelo comando "php -S h
 
 # Endpoints
 
-Contratos:
+## Contratos:
 
 GET /api/contracts = Retorna todos os contratos registrados
+
 GET /api/contracts/(id) = Retorna o contrato com o id específico
+
 POST /api/contracts = Envia os dados do contrato no body
+
 PUT /api/contracts = Atualiza o registro cujo id está no body
+
 DELETE /api/contracts/(id) = Exclui o registro do contrato com o id específico
 
-Partes
+## Partes
 
 GET /api/parts = Retorna todas sa partes registradas
+
 GET /api/parts/(id) = Retorna a parte com o id específico
+
 POST /api/parts = Envia os dados da parte no body
+
 PUT /api/parts = Atualiza o registro da parte cujo id está no body
+
 DELETE /api/parts/(id) = Exclui o registro da parte com o id específico
